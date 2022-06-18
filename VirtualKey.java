@@ -24,14 +24,16 @@ import java.io.*;
           
             switch(choice)
             {
+                
                 case 1: System.out.println("Enter User Name :");
                 name= br.readLine();
                 userList.add(name);
                 for(int i=0;i<userList.size();i++){
-                    System.out.println(userList.get(i));
+                    //System.out.println(userList.get(i));
                 }
                 break;
                 case 2: System.out.println("Enter Search User Name :");
+                 if(userList.size()>0){
                 name= br.readLine();
                 for(int i=0;i<userList.size();i++){
                     if(userList.get(i).contains(name)){
@@ -42,21 +44,25 @@ import java.io.*;
                     
                 }
                  break;
+                     
+                 }
                  case 3: System.out.println("Delete User Name :");
-                name= br.readLine();
+                 if(userList.size()>0){
+                name = br.readLine();
                 for(int i=0;i<userList.size();i++){
                     if(userList.get(i).contains(name)){
                         
                         userList.remove(i);
                         
                     }
-                    System.out.println("User List after remove"+userList.get(i));
+                  //  System.out.println("User List after remove"+userList.get(i));
                     
                 }
-                break;
-                
-                default:return;
+                break;     
+                 }
+                 default:return;
             }
+          
           
         }
     }
